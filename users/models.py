@@ -16,3 +16,5 @@ class Author(models.Model):
         return self.name
 
 
+class Subscriber(models.Model):
+    email = models.EmailField(max_length=50)

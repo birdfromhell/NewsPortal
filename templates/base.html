@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+{#    <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">#}
     <link rel="stylesheet" href="{% static 'assets/css/imageRevealHover.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
@@ -61,8 +61,8 @@
                     </div>
                     <div class="col-lg-4 col-md-3 order-0 order-lg-2 d-none d-md-block">
                         <div class="header__top-logo logo text-lg-center">
-                            <a href="index.html" class="logo-dark"><img src="{% static 'assets/img/logo/logo.png' %}" alt="Logo"></a>
-                            <a href="index.html" class="logo-light"><img src="{% static 'assets/img/logo/w_logo.png' %}" alt="Logo"></a>
+                            <a href="{{ homepage }}" class="logo-dark"><img src="{% static 'assets/img/logo/logo.png' %}" alt="Logo"></a>
+                            <a href="{{ homepage }}" class="logo-light"><img src="{% static 'assets/img/logo/w_logo.png' %}" alt="Logo"></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-3 col-sm-6 order-3 d-none d-sm-block">
@@ -96,31 +96,21 @@
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo d-block d-md-none">
-                                    <a href="index.html" class="logo-dark"><img src="{% static 'assets/img/logo/logo.png' %}" alt="Logo"></a>
-                                    <a href="index.html" class="logo-light"><img src="{% static 'assets/img/logo/w_logo.png' %}" alt="Logo"></a>
+                                    <a href="{{ homepage }}" class="logo-dark"><img src="{% static 'assets/img/logo/logo.png' %}" alt="Logo"></a>
+                                    <a href="{{ homepage }}" class="logo-light"><img src="{% static 'assets/img/logo/w_logo.png' %}" alt="Logo"></a>
                                 </div>
                                 <div class="offcanvas-toggle">
                                     <a href="#"><i class="flaticon-menu-bar"></i></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="active menu-item-has-children"><a href="#">Home</a>
-                                            <ul class="sub-menu">
-                                                <li class="active"><a href="index.html">Home Default</a></li>
-                                                <li><a href="index-2.html">Home Interior</a></li>
-                                                <li><a href="index-3.html">Home Travel</a></li>
-                                                <li><a href="index-4.html">Home Technology</a></li>
-                                                <li><a href="index-5.html">Home NFT</a></li>
-                                                <li><a href="index-6.html">Home Fashion</a></li>
-                                                <li><a href="index-7.html">Home Adventure</a></li>
-                                                <li><a href="index-8.html">Home Minimal</a></li>
-                                            </ul>
+                                        <li class="active menu-item-has-children"><a href="{{ homepage }}">Home</a>
                                         </li>
                                         <li><a href="lifestyle.html">Category</a>
 
                                         <ul class="sub-menu">
                                             {% for category in categories %}
-                                                <li><a href="{% url 'category' %}">{{ category.name }}</a></li>
+                                                <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
                                               {% endfor %}
                                             </ul>
 
@@ -139,7 +129,7 @@
                                     <ul class="list-wrap">
                                         <li class="mode-switcher">
                                             <nav class="switcher__tab">
-                                                <span class="switcher__btn light-mode"><i class="flaticon-sun"></i></span>
+                                                <span class="switcher__btn light-mode"><i class="fa-thin fa-sun"></i></span>
                                                 <span class="switcher__mode"></span>
                                                 <span class="switcher__btn dark-mode"><i class="flaticon-moon"></i></span>
                                             </nav>
@@ -192,8 +182,8 @@
                 <div class="offCanvas__toggle"><i class="flaticon-addition"></i></div>
                 <div class="offCanvas__content">
                     <div class="offCanvas__logo logo">
-                        <a href="index.html" class="logo-dark"><img src="assets/img/logo/logo.png" alt="Logo"></a>
-                        <a href="index.html" class="logo-light"><img src="assets/img/logo/w_logo.png" alt="Logo"></a>
+                        <a href="{{ homepage }}" class="logo-dark"><img src="assets/img/logo/logo.png" alt="Logo"></a>
+                        <a href="{{ homepage }}" class="logo-light"><img src="assets/img/logo/w_logo.png" alt="Logo"></a>
                     </div>
                     <p>Change how the world works with Biotellus, made for ecology.</p>
                     <ul class="offCanvas__instagram list-wrap">

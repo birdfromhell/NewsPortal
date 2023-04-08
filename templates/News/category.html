@@ -14,7 +14,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ category.name }}</li>
                                 </ol>
                             </nav>
                         </div>
@@ -163,7 +163,7 @@
                                     <li>
                                         <div class="thumb"><a href="blog.html"><img src="{% static 'assets/img/category/side_category01.jpg' %}" alt="img"></a></div>
                                         <a href="blog.html">{{ category.name }}</a>
-                                        <span class="float-right">12</span>
+                                        <span class="float-right">{{ category.number_of_categories }}</span>
                                     </li>
                                     {% endfor %}
 {#                                    <li>#}

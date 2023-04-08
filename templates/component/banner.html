@@ -1,0 +1,52 @@
+  <section class="tgbanner__area">
+
+            <div class="container">
+                <div class="tgbanner__grid">
+                    <div class="tgbanner__post big-post">
+                        {% for latest in latest_post_01 %}
+                        <div class="tgbanner__thumb tgImage__hover">
+                            <a href="{{ latest.get_absolute_url }}"><img src="{{ latest.image.url }}" alt="{{ latest.title }}"></a>
+                        </div>
+                        <div class="tgbanner__content">
+                            <ul class="tgbanner__content-meta list-wrap">
+                                <li class="category"><a href="{{ latest.category.get_absolute_url }}">{{ latest.category.name }}</a></li>
+                                <li><span class="by">By</span> <a href="blog.html">{{ latest.author.name }}</a></li>
+                                <li>{{ latest.date_created }}</li>
+                            </ul>
+
+                            <h2 class="title tgcommon__hover"><a href="{{ latest.get_absolute_url }}">{{ latest.title }}</a></h2>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="tgbanner__side-post">
+                        <div class="tgbanner__post small-post">
+                            {% for latest in latest_post_02 %}
+                            <div class="tgbanner__thumb tgImage__hover">
+                                <a href="{{ latest.get_absolute_url }}"><img src="{{ latest.image.url }}" alt="img"></a>
+                            </div>
+                            <div class="tgbanner__content">
+                                <ul class="tgbanner__content-meta list-wrap">
+                                    <li class="category"><a href="{{ latest.category.get_absolute_url }}">{{ latest.category.name }}</a></li>
+                                </ul>
+                                <h2 class="title tgcommon__hover"><a href="{{ latest.get_absolute_url }}">{{ latest.title }}</a></h2>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="tgbanner__post small-post">
+                            {% for latest in latest_post_03 %}
+                            <div class="tgbanner__thumb tgImage__hover">
+                                <a href="{{ latest.get_absolute_url }}"><img src="{{ latest.image.url }}" alt="img"></a>
+                            </div>
+                            <div class="tgbanner__content">
+                                <ul class="tgbanner__content-meta list-wrap">
+                                    <li class="category"><a href="{{ latest.category.get_absolute_url }}">{{ latest.category }}</a></li>
+                                </ul>
+                                <h2 class="title tgcommon__hover"><a href="{{ latest.get_absolute_url }}">{{ latest.title }}</a></h2>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>

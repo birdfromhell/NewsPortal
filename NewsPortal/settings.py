@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
+    'anymail',
     'News',
     'users'
 ]
@@ -67,7 +68,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'News.context_processors.category'
+                'News.context_processors.category',
+                'News.context_processors.latest_post',
+                'News.context_processors.homepage'
             ],
         },
     },
@@ -137,3 +140,5 @@ CLOUDINARY_STORAGE = {
     'API_KEY': '399442122653895',
     'API_SECRET': 'fX73LF_Clc_hgq8SeEZRC00u2Uo'
 }
+
+EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
