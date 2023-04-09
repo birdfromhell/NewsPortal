@@ -1,4 +1,4 @@
-from .models import Categories, Posts
+from .models import Categories, Posts, Site
 from django.urls import reverse
 
 
@@ -23,9 +23,11 @@ def latest_post(request):
     }
 
 
-def homepage(request):
-    link = reverse('index')
+def site_settings(request):
+    sitename = Site.objects.get(pk=1)
+    homepage_url = reverse('index')
 
     return {
-        'homepage': link
+        'site_setting': sitename,
+        'homepage': homepage_url
     }

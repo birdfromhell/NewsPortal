@@ -139,7 +139,9 @@ h6 {
   line-height: 1.2;
   text-transform: unset;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 h1 a,
 h2 a,
 h3 a,

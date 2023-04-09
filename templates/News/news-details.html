@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+    <!-- main-area -->
+{% block content %}
+    <main>
+
+        <!-- breadcrumb-area -->
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb-content">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ homepage }}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ posts.category.get_absolute_url }}">{{ posts.category.name }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ posts.title }}</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb-area-end -->
+
+        <!-- blog-details-area -->
+        <section class="blog-details-area pt-80 pb-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-1">
+                        <div class="blog-details-social">
+                            <ul class="list-wrap">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fas fa-share"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="blog-details-wrap">
+                            <ul class="tgbanner__content-meta list-wrap">
+                                <li class="category"><a href="blog.html">{{ posts.category.name }}</a></li>
+                                <li><span class="by">By</span> <a href="blog.html">{{ posts.author.name }}</a></li>
+                                <li>{{ posts.date_created }}</li>
+                            </ul>
+                            <h2 class="title">Envato officially goes carbon neutral ahead of Earth Day</h2>
+                            <div class="blog-details-thumb">
+                                <img src="{{ posts.image.url }}" alt="">
+                            </div>
+{#                            <div class="blog-details-content">#}
+{#                                <p>In partnership with Sydney startup Trace, Envato is delivering on its sustainability promise as a B-Corp and meeting part of its recent commitment to the To Whom It Should Concern campaign. Envato is now officially carbon neutral, as part of a comprehensive new sustainability.</p>#}
+{#                                <p>When we signed on to the To Whom It May Concern campaign we made a pledge to be 100% renewable by 2030 and carbon zero by 2040,” said Envato CEO Hichame Assi. “It’s a commitment made on the back of our B Corp certification, and one we believe reflects not just our values but a broader sense of how businesses can contribute to fighting climate change.</p>#}
+{#                                <p>We are proud that our people can make a positive impact on the world around us through their work at Envato. And while there is still lots of work to do to realise carbon, we’re nonetheless pleased we’ve reached this sustainability milestone and thrilled to partner with Trace to further track and refine the management of our carbon footprint. An through Trace, Envato is now able to more comprehensively measure the amount of carbon emissions the business generates. This includes not just its physical offices in Melbourne, Guadalajara and Los Angeles, but also includes an estimate of the footprint of its 600 plus staff who work flexibly around the world, as well as the usage tied to its tech infrastructure including our cloud computing services.</p>#}
+{#                                <div class="blog-details-inner">#}
+{#                                    <h3 class="inner-title">Building the Future of Artificial Intelligence</h3>#}
+{#                                    <p>When we signed on to the To Whom It May Concern campaign we made a pledge to be 100% renewable by 2030 and carbon zero by 2040,” said Envato CEO Hichame Assi. “It’s a commitment made on the back of our B Corp certification, and one we believe reflects not just our values but a broader sense of how businesses can contribute to fighting climate change.</p>#}
+{#                                    <div class="blog-details-images">#}
+{#                                        <div class="row">#}
+{#                                            <div class="col-md-4 col-sm-6">#}
+{#                                                <div class="details-inner-image">#}
+{#                                                    <img src="assets/img/lifestyle/life_style02.jpg" alt="img">#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                            <div class="col-md-4 col-sm-6">#}
+{#                                                <div class="details-inner-image">#}
+{#                                                    <img src="assets/img/lifestyle/life_style03.jpg" alt="img">#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                            <div class="col-md-4 col-sm-6">#}
+{#                                                <div class="details-inner-image">#}
+{#                                                    <img src="assets/img/lifestyle/life_style04.jpg" alt="img">#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <p>The Mount Sandy project in South Australia is one of those supported by Envato through Trace. Its permanent protection of the regionally and culturally important pocket. Trace CEO and Co-Founder Catherine Long said Envato was a perfect example of a fast-moving tech business that already has a demonstrable commitment to sustain.#}
+{#                                    “But they needed a solution for measuring and managing their carbon footprint that matched the speed & efficiency of the way they work footprint that matched the speed.</p>#}
+{#                                </div>#}
+{#                                <blockquote>#}
+{#                                    <p>“ 20 years ago today, Steve introduced the world to iMac. It set Apple on a new course and forever changed the way people look at computers. ”</p>#}
+{#                                    <div class="blockquote-cite">#}
+{#                                        <div class="image">#}
+{#                                            <img src="assets/img/others/about_me.png" alt="">#}
+{#                                        </div>#}
+{#                                        <div class="info">#}
+{#                                            <h5>Miranda H. Halim</h5>#}
+{#                                            <span>Head Of Idea</span>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </blockquote>#}
+{#                                <p>We are proud that our people can make a positive impact on the world around us through their work at Envato. And while there is still lots of work to do to realise carbon, we’re nonetheless pleased we’ve reached this sustainability milestone and thrilled to partner with Trace to further track and refine the management of our carbon footprint. An#}
+{#                                through Trace, Envato is now able to more comprehensively measure the amount of carbon emissions the business generates. This includes not just its physical offices in Melbourne, Guadalajara and Los Angeles, but also includes an estimate of the footprint of its 600 plus staff who work flexibly around the world, as well as the usage tied to its ech infrastructure including our cloud computing services.</p>#}
+{#                                <div class="blog-details-inner">#}
+{#                                    <h3 class="inner-title">The Creative Cloud</h3>#}
+{#                                    <p>When we signed on to the To Whom It May Concern campaign we made a pledge to be 100% renewable by 2030 and carbon zero by 2040,” said Envato CEO Hichame Assi..</p>#}
+{#                                    <ul class="list-wrap">#}
+{#                                        <li><span>The games generate:</span>Revenue through sales of digital items, such as special costumes, which appear in a rotating storefront that is updated daily.</li>#}
+{#                                        <li><span>Players use in-game:</span>Currency to customize their appearance, and the daily refresh of the store incentives players to buy fresh gear or risk missing out on it entirely.</li>#}
+{#                                        <li><span>Players have:</span> Already spent more than $1 billion on Fortnite’s in-game purchases, according to IGN report.</li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                                <div class="details-advertisement">#}
+{#                                    <a href="#"><img src="assets/img/others/advertisement02.png" alt="img"></a>#}
+{#                                </div>#}
+{#                                <p>Envato is now able to more comprehensively measure the amount of carbon emissions the business generates. includes not just its physical offices in Melbourne, Guadalajara and Los Angeles, but also includes an estimate of footprint of its 600 plus staff who work flexibly around the world, as well as the usage tied to its tech infrastructure including our cloud computing services lexibly around the world.</p>#}
+{#                            </div>#}
+                            <div class="blog-details-bottom">
+                                <div class="row align-items-baseline">
+                                    <div class="col-xl-6 col-md-7">
+                                        <div class="blog-details-tags">
+                                            <ul class="list-wrap mb-0">
+                                                {% for tag in posts.tags.name %}
+                                                <li><a href="#">{{ tag }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-md-5">
+                                        <div class="blog-details-share">
+                                            <h6 class="share-title">Share Now:</h6>
+                                            <ul class="list-wrap mb-0">
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-avatar-wrap">
+                                <div class="blog-avatar-img">
+                                    <a href="#"><i class="far fa-check"></i><img src="assets/img/others/avatar.png" alt="img"></a>
+                                </div>
+                                <div class="blog-avatar-content">
+                                    <p>Monty Hython is a Writer at Sarsa and has been covering emerging technologies &
+                                    venture capital there since 2013. He covers a wide variety of news from early and late stage startups to massive tech behemoths.</p>
+                                    <h5 class="name">Alison Fiano</h5>
+                                    <span class="designation">OG Author</span>
+                                </div>
+                            </div>
+                            <div class="blog-prev-next-posts">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-8 col-md-6">
+                                        <div class="pn-post-item">
+                                            <div class="thumb">
+                                                <a href="news-details.html"><img src="assets/img/lifestyle/life_style06.jpg" alt="img"></a>
+                                            </div>
+                                            <div class="content">
+                                                <span>Prev Post</span>
+                                                <h5 class="title tgcommon__hover"><a href="news-details.html">3 Stocks to Buy and Hold Through the Panic...</a></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-8 col-md-6">
+                                        <div class="pn-post-item next-post">
+                                            <div class="thumb">
+                                                <a href="news-details.html"><img src="assets/img/lifestyle/life_style07.jpg" alt="img"></a>
+                                            </div>
+                                            <div class="content">
+                                                <span>Next Post</span>
+                                                <h5 class="title tgcommon__hover"><a href="news-details.html">Mood Boards for Product Designers dome...</a></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{#          {% include 'News/component/sidebar.html' %}#}
+        </section>
+
+        <!-- blog-details-area-end -->
+
+    </main>
+    <!-- main-area-end -->
+{% endblock %}

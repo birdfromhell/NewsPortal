@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,8 +42,11 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'anymail',
+    'ckeditor',
+    'ninja',
     'News',
-    'users'
+    'users',
+    'dashboard'
 ]
 
 MIDDLEWARE = [
@@ -70,7 +75,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'News.context_processors.category',
                 'News.context_processors.latest_post',
-                'News.context_processors.homepage'
+                'News.context_processors.site_settings'
             ],
         },
     },
@@ -142,3 +147,19 @@ CLOUDINARY_STORAGE = {
 }
 
 EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+
+sentry_sdk.init(
+    dsn="https://f13b7d1182ba4dd89f0e87fc997d0892@o4504983939776512.ingest.sentry.io/4504983944822784",
+    integrations=[
+        DjangoIntegration(),
+    ],
+
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0,
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
